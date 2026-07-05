@@ -71,7 +71,7 @@ export default function AnalyticsDashboard({ applications }) {
   return (
     <div className="space-y-6">
       {/* Stat cards */}
-      <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4"> 
         <div className="bg-white p-4 rounded-lg shadow-sm">
           <p className="text-gray-500 text-sm">Total Applications</p>
           <p className="text-3xl font-bold">{stats.total}</p>
@@ -88,7 +88,7 @@ export default function AnalyticsDashboard({ applications }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Status breakdown pie chart */}
         <div className="bg-white p-4 rounded-lg shadow-sm">
           <h3 className="font-semibold mb-3">Status Breakdown</h3>

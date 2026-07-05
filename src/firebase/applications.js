@@ -5,6 +5,8 @@ import {
   updateDoc,
   deleteDoc,
   doc,
+  getDoc,
+  setDoc,
   query,
   where,
   orderBy,
@@ -30,10 +32,17 @@ export async function getApplicationsFromDb(userId) {
     orderBy('createdAt', 'desc')
   );
   const querySnapshot = await getDocs(q);
-  return querySnapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-  }));
+  return querySnapshot.docs.map((doc) => {
+    const data = doc.data();
+    return {
+      id: doc.id,
+      ...data,
+      createdAt:
+        data.createdAt && typeof data.createdAt.toDate === 'function'
+          ? data.createdAt.toDate().toISOString()
+          : data.createdAt || null,
+    };
+  });
 }
 
 export async function updateApplicationInDb(id, updatedData) {
@@ -45,3 +54,13 @@ export async function deleteApplicationFromDb(id) {
   const docRef = doc(db, APPLICATIONS_COLLECTION, id);
   await deleteDoc(docRef);
 }
+
+export async function saveUserProfile(userId, profileData) {
+  await setDoc(doc(db, 'users', userId), profileData, { merge: true });
+}
+
+export async function getUserProfile(userId) {
+  const docSnap = await getDoc(doc(db, 'users', userId));
+  return docSnap.exists() ? docSnap.data() : null;
+}
+
