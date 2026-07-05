@@ -1,8 +1,8 @@
 const STATUS_STYLES = {
-  Applied: { bg: 'bg-blue-50', text: 'text-blue-700', dot: 'bg-blue-500', border: 'border-l-blue-500' },
+  Applied: { bg: 'bg-indigo-50', text: 'text-indigo-700', dot: 'bg-indigo-500', border: 'border-l-indigo-500' },
   'OA/Test': { bg: 'bg-purple-50', text: 'text-purple-700', dot: 'bg-purple-500', border: 'border-l-purple-500' },
   Interview: { bg: 'bg-yellow-50', text: 'text-yellow-700', dot: 'bg-yellow-500', border: 'border-l-yellow-500' },
-  Offer: { bg: 'bg-green-50', text: 'text-green-700', dot: 'bg-green-500', border: 'border-l-green-500' },
+  Offer: { bg: 'bg-teal-50', text: 'text-teal-700', dot: 'bg-teal-500', border: 'border-l-teal-500' },
   Rejected: { bg: 'bg-red-50', text: 'text-red-700', dot: 'bg-red-500', border: 'border-l-red-500' },
 };
 
@@ -58,10 +58,11 @@ export default function ApplicationCard({ application, onEdit, onDelete }) {
 
           {application.jobLink && (
             
-             <a href={application.jobLink}
+              <a 
+              href={application.jobLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-blue-500 text-xs hover:underline mt-2 font-medium"
+              className="inline-flex items-center gap-1 text-teal-600 text-xs hover:underline mt-2 font-medium"
             >
               View Job Posting
               <svg
@@ -91,7 +92,7 @@ export default function ApplicationCard({ application, onEdit, onDelete }) {
         <div className="flex gap-2 shrink-0">
           <button
             onClick={() => onEdit(application)}
-            className="text-blue-600 text-sm font-medium hover:bg-blue-50 px-3 py-1.5 rounded-lg transition"
+            className="text-indigo-600 text-sm font-medium hover:bg-indigo-50 px-3 py-1.5 rounded-lg transition"
           >
             Edit
           </button>

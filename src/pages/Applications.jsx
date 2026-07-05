@@ -92,7 +92,7 @@ export default function Applications() {
     }
 
     return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 px-6 sm:px-10 pt-8 pb-10">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-teal-50 to-cyan-50 px-6 sm:px-10 pt-8 pb-10">
         <div className="max-w-3xl mx-auto">
             <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-8">
                 <div>
@@ -103,7 +103,7 @@ export default function Applications() {
                 {!showForm && (
                     <button
                         onClick={handleAddClick}
-                        className="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-blue-700 active:scale-[0.98] transition shadow-md shadow-blue-200 whitespace-nowrap"
+                        className="bg-gradient-to-r from-indigo-600 to-teal-500 text-white px-5 py-2.5 rounded-lg font-medium hover:from-indigo-700 hover:to-teal-600 active:scale-[0.98] transition shadow-md shadow-teal-200 whitespace-nowrap"
                     >
                         + Add Application
                     </button>
@@ -120,12 +120,12 @@ export default function Applications() {
                     placeholder="Search by company name..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="flex-1 px-4 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    className="flex-1 px-4 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
                 />
                 <select
                     value={statusFilter}
                     onChange={(e) => setStatusFilter(e.target.value)}
-                    className="px-4 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    className="px-4 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
                 >
                     <option value="All">All Statuses</option>
                     <option value="Applied">Applied</option>

@@ -27,7 +27,7 @@ export default function ApplicationForm({ onSubmit, onCancel, initialData }) {
   }
 
   const inputClass =
-    'w-full px-4 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white transition';
+    'w-full px-4 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent focus:bg-white transition';
 
   return (
     <form
@@ -35,10 +35,10 @@ export default function ApplicationForm({ onSubmit, onCancel, initialData }) {
       className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100"
     >
       <div className="flex items-center gap-3 mb-6">
-        <div className="flex items-center justify-center w-10 h-10 bg-blue-50 rounded-xl">
+        <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-indigo-50 to-teal-50 rounded-xl">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 text-blue-600"
+            className="h-5 w-5 text-teal-600"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -161,7 +161,7 @@ export default function ApplicationForm({ onSubmit, onCancel, initialData }) {
       <div className="flex gap-3 pt-6 mt-6 border-t border-gray-100">
         <button
           type="submit"
-          className="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-blue-700 active:scale-[0.98] transition shadow-md shadow-blue-200"
+          className="bg-gradient-to-r from-indigo-600 to-teal-500 text-white px-5 py-2.5 rounded-lg font-medium hover:from-indigo-700 hover:to-teal-600 active:scale-[0.98] transition shadow-md shadow-teal-200"
         >
           {initialData ? 'Update Application' : 'Add Application'}
         </button>

@@ -10,7 +10,7 @@ export default function Navbar() {
   const linkClass = (path) =>
     `px-4 py-2 rounded-lg text-sm font-medium transition ${
       location.pathname === path
-        ? 'bg-blue-600 text-white shadow-sm shadow-blue-200'
+        ? 'bg-gradient-to-r from-indigo-600 to-teal-500 text-white shadow-sm shadow-teal-200'
         : 'text-gray-600 hover:bg-gray-100'
     }`;
 
@@ -20,7 +20,7 @@ export default function Navbar() {
     <nav className="bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3 flex flex-col sm:flex-row justify-between items-center gap-3">
         <div className="flex items-center gap-2 flex-wrap justify-center">
-          <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg shadow-sm shadow-blue-200">
+          <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-indigo-600 to-teal-500 rounded-lg shadow-sm shadow-teal-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4 text-white"
@@ -52,14 +52,14 @@ export default function Navbar() {
             to="/profile"
             className="hidden sm:flex items-center gap-2 bg-gray-50 pl-1 pr-3 py-1 rounded-full border border-gray-100 hover:bg-gray-100 transition"
           >
-            <div className="flex items-center justify-center w-7 h-7 bg-blue-600 text-white text-xs font-semibold rounded-full">
+            <div className="flex items-center justify-center w-7 h-7 bg-gradient-to-br from-indigo-600 to-teal-500 text-white text-xs font-semibold rounded-full">
               {initial}
             </div>
             <span className="text-sm text-gray-600">{currentUser.email}</span>
           </Link>
           <Link
             to="/profile"
-            className="sm:hidden flex items-center justify-center w-8 h-8 bg-blue-600 text-white text-xs font-semibold rounded-full"
+            className="sm:hidden flex items-center justify-center w-8 h-8 bg-gradient-to-br from-indigo-600 to-teal-500 text-white text-xs font-semibold rounded-full"
           >
             {initial}
           </Link>

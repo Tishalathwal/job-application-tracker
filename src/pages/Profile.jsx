@@ -66,14 +66,14 @@ export default function Profile() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-teal-50 to-cyan-50 flex items-center justify-center">
         <p className="text-gray-500">Loading profile...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 px-6 sm:px-10 pt-8 pb-10">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-teal-50 to-cyan-50 px-6 sm:px-10 pt-8 pb-10">
       <div className="max-w-2xl mx-auto">
         <div className="flex justify-between items-start mb-8">
           <div>
@@ -87,14 +87,16 @@ export default function Profile() {
               <div className="w-20 h-2 bg-gray-100 rounded-full overflow-hidden">
                 <div
                   className={`h-full rounded-full transition-all ${
-                    completionPercent === 100 ? 'bg-green-500' : 'bg-blue-600'
+                    completionPercent === 100
+                      ? 'bg-teal-500'
+                      : 'bg-gradient-to-r from-indigo-600 to-teal-500'
                   }`}
                   style={{ width: `${completionPercent}%` }}
                 />
               </div>
               <span
                 className={`text-sm font-semibold ${
-                  completionPercent === 100 ? 'text-green-600' : 'text-blue-600'
+                  completionPercent === 100 ? 'text-teal-600' : 'text-indigo-600'
                 }`}
               >
                 {completionPercent}%
@@ -105,7 +107,7 @@ export default function Profile() {
 
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
           <div className="flex items-center gap-4 mb-8">
-            <div className="flex items-center justify-center w-16 h-16 bg-blue-600 text-white text-2xl font-semibold rounded-full">
+            <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-indigo-600 to-teal-500 text-white text-2xl font-semibold rounded-full">
               {initial}
             </div>
             <div>
@@ -117,7 +119,7 @@ export default function Profile() {
           </div>
 
           {message && (
-            <div className="bg-green-50 border border-green-200 text-green-700 text-sm px-4 py-3 rounded-lg mb-5">
+            <div className="bg-teal-50 border border-teal-200 text-teal-700 text-sm px-4 py-3 rounded-lg mb-5">
               {message}
             </div>
           )}
@@ -133,7 +135,7 @@ export default function Profile() {
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder="Your full name"
-                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white transition"
+                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent focus:bg-white transition"
               />
             </div>
 
@@ -147,7 +149,7 @@ export default function Profile() {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="e.g. 98765 43210"
-                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white transition"
+                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent focus:bg-white transition"
               />
             </div>
 
@@ -160,8 +162,8 @@ export default function Profile() {
                 name="college"
                 value={formData.college}
                 onChange={handleChange}
-                placeholder="e.g. Gateway Institute of Engineering"
-                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white transition"
+                placeholder="e.g. XYZ University"
+                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent focus:bg-white transition"
               />
             </div>
 
@@ -175,7 +177,7 @@ export default function Profile() {
                 value={formData.targetRole}
                 onChange={handleChange}
                 placeholder="e.g. Frontend Developer"
-                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-white transition"
+                className="w-full px-4 py-2.5 border border-gray-200 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent focus:bg-white transition"
               />
             </div>
 
@@ -195,7 +197,7 @@ export default function Profile() {
             <button
               type="submit"
               disabled={saving}
-              className="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-blue-700 active:scale-[0.98] transition shadow-md shadow-blue-200 disabled:opacity-50"
+              className="bg-gradient-to-r from-indigo-600 to-teal-500 text-white px-5 py-2.5 rounded-lg font-medium hover:from-indigo-700 hover:to-teal-600 active:scale-[0.98] transition shadow-md shadow-teal-200 disabled:opacity-50"
             >
               {saving ? 'Saving...' : 'Save Changes'}
             </button>

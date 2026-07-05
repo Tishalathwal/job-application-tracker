@@ -50,9 +50,8 @@ export default function Dashboard() {
   const isProfileIncomplete = filledCount < PROFILE_FIELDS.length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 px-6 sm:px-10 pt-8 pb-10">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-teal-50 to-cyan-50 px-6 sm:px-10 pt-8 pb-10">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <div>
             <p className="text-gray-500 text-sm">Welcome back</p>
@@ -68,12 +67,11 @@ export default function Dashboard() {
           </button>
         </div>
 
-        {/* Profile incomplete banner */}
         {isProfileIncomplete && (
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 flex flex-col sm:flex-row justify-between items-center gap-3">
             <p className="text-amber-800 text-sm">
-              Your profile is incomplete ({filledCount}/{PROFILE_FIELDS.length} fields filled).
-              Complete it for a better experience.
+              Your profile is {Math.round((filledCount / PROFILE_FIELDS.length) * 100)}% complete.
+              Add your details to personalize your dashboard.
             </p>
             <Link
               to="/profile"
@@ -84,7 +82,6 @@ export default function Dashboard() {
           </div>
         )}
 
-        {/* Stat cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
           <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
             <p className="text-gray-500 text-sm mb-1">Total Applications</p>
@@ -96,11 +93,10 @@ export default function Dashboard() {
           </div>
           <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
             <p className="text-gray-500 text-sm mb-1">Offers</p>
-            <p className="text-3xl font-bold text-green-600">{offers}</p>
+            <p className="text-3xl font-bold text-teal-600">{offers}</p>
           </div>
         </div>
 
-        {/* Quick action card */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col sm:flex-row justify-between items-center gap-6">
           <div>
             <h2 className="text-xl font-semibold text-gray-900 mb-1">
@@ -112,7 +108,7 @@ export default function Dashboard() {
           </div>
           <Link
             to="/applications"
-            className="whitespace-nowrap bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 active:scale-[0.98] transition shadow-md shadow-blue-200"
+            className="whitespace-nowrap bg-gradient-to-r from-indigo-600 to-teal-500 text-white px-6 py-3 rounded-lg font-medium hover:from-indigo-700 hover:to-teal-600 active:scale-[0.98] transition shadow-md shadow-teal-200"
           >
             View Applications
           </Link>
