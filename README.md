@@ -2,8 +2,8 @@
 
 A full-stack web application to track and manage job applications, built to solve a real problem — organizing my own internship search process.
 
-🔗 **Live Demo:** [Add your Netlify link here]  
-💻 **GitHub:** [Add your repo link here]
+🔗 **Live Demo:** https://tisha-job-tracker-25f6bc.netlify.app/login  
+💻 **GitHub:** https://github.com/Tishalathwal/job-application-tracker
 
 ## Overview
 
@@ -57,7 +57,7 @@ src/
 
 1. Clone the repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Tishalathwal/job-application-tracker
 cd job-application-tracker
 ```
 
